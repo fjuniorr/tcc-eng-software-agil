@@ -208,23 +208,28 @@
 % ----------------------------------------------------------
 \section*{Introdução}
 \addcontentsline{toc}{section}{Introdução}
-O tema deste artigo é a utilização de práticas ágeis de engenharia de software por pesquisadores para o desenvolvimento de softwares científicos.
+A evolução da infra-estrutura computacional disponível para pesquisadores nos mais diversos campos do conhecimento tem gerado o desenvolvimento de duas novas disciplinas intrinsicamente relacionadas que visam utilizar estes recursos para a resolução de problemas, quais sejam, a ciência computacional e a ciência dos dados.
 
-\subsection*{Justificativa}
-Cada vez mais pesquisadores necessitam de habilidades computacionais para o desenvolvimento de suas pesquisas científicas. Essa expansão é tão pervasiva que alguns até mesmo chegam a dizer que a computação científica, entendida como a aplicação da computação para solução de problemas de interesse da ciência, seria o novo terceiro pilar do método científico, em conjunto com a teoria e a experimentação. \cite{pitac2005}.
+De acordo com \citeonline{pitac2005} a ciência computacional pode ser entendida como um campo de estudos interdisciplinar que visa a utilização de recursos computacionais avançados para o entendimento e resolução de problemas complexos. Ao contrário da ciência da computação, que visa o estudo da computação a partir de uma perspectiva científica, o foco da ciência computacional é a resolução de problemas de outras disciplinas científicas, o foco é a aplicação.
 
-No entanto, diferentemente do encontrado em ambientes comerciais, os profissionais usualmente responsáveis pelo desenvolvimento de softwares científicos não possuem o treinamento adequado, e, quando possuem, ele geralmente é obtido de forma autodidata, em práticas de engenharia de software que são capazes de garantir os atributos de qualidade de um software. O conselho de \citeonline{gentzkow2014} é extremamente válido nesse contexto:  
+Por sua vez, uma das definições mais aceitas de ciência dos dados provém de \citeonline{cleveland2014} que utilizou o termo para se referir a uma proposta de expansão das áreas de interesse da estatística com foco na análise de dados. Dentre as áreas de expansão sugeridas encontram-se computação com dados e avaliação de ferramentas.
+
+% Melhorar a definição de data science
+
+Estes dois campos estão tão relacionados e vem ganhando tanta força, que tem sido chamados, respectivamente, de terceiro e quartos pilares da ciência, ao lado da teoria e da experimentação. Apesar posições contrárias a inclusão desses campos como pilares da ciência, como aquela de \citeonline{vardi2010}, é possível encontrar no mínimo dois pontos de unanimidade: 1) a ciência computacional e a ciência dos dados estão proporcionando avanço científico, econômico e social a ponto de serem consideradas uma revolução; 2) cada vez mais pesquisadores irão precisar de habilidades computacionais para aproveitar os novos recursos a disposição para resolução de seus problemas.
+
+% Necessário citações para justificar afirmativas 1 e 2
+
+Este trabalho irá se debruçar sobre uma das componentes dessa revolução que se faz presente tanto na ciência computacional quanto na ciência de dados. O desenvolvimento de software. Mais especificamente, o tema deste artigo é a utilização de práticas ágeis de engenharia de software por pesquisadores para o desenvolvimento de softwares científicos.
+
+A justificativa para este trabalho deriva da importância destes novos campos para o avanço científico e da constatação de que pesquisadores gastam uma parcela cada vez maior do seu tempo desenvolvendo software sem o treinamento adequado. \cite{wilson2014}. Isso gera pesquisadores autodidatas que não utilizam práticas de engenharia de software que já se tornaram \emph{mainstream} na indústria. O conselho de \citeonline{gentzkow2014} é extremamente válido nesse contexto:  
 
 \begin{citacao}
 If you are trying to solve a problem, and there are multi-billion dollar firms whose entire business model depends on solving the same problem, and there are whole courses at your university devoted to how to solve that problem, you might want to figure out what the experts do and see if you can’t learn something from it. \cite[pg. 5]{gentzkow2014}.
 \end{citacao}
 
-A justificativa desse trabalho deriva justamente dessa motivação. Em especial, o processo de desenvolvimento de software científico aparenta ter características similares a aquelas endereçadas pelo manifesto ágil, como responsividade a mudança e colaboração \cite{sletholt2012}, tornando essas práticas especialmente interessantes de serem estudadas para fins de utilização por pesquisadores.
+Além disso, o processo de desenvolvimento de software científico aparenta ter características similares a aquelas endereçadas pelo manifesto ágil, como responsividade a mudança e colaboração \cite{sletholt2012}, tornando essas práticas especialmente interessantes de serem estudadas para fins de utilização por pesquisadores. Deste modo, o problema de pesquisa desta trabalho pode ser formulado como: Quais práticas ágeis de engenharia de software são adequadas as necessidades dos pesquisadores que precisam desenvolver software no âmbito de sua pesquisa?
 
-\subsection*{Problematização}
-O problema de pesquisa desta trabalho pode ser formulado como: Quais práticas ágeis de engenharia de software são adequadas as necessidades dos pesquisadores que precisam desenvolver software no âmbito de sua pesquisa?
-
-\subsection*{Objetivos}
 O objetivo geral deste trabalho é identificar quais práticas ágeis de engenharia de software podem ser utilizadas por pesquisadores para o desenvolvimento de softwares científicos. Para tanto, podem ser listados como objetivos específicos deste trabalho:
 
 - Documentar as práticas de engenharia de software caracterizadas pela agilidade
@@ -235,7 +240,9 @@ O objetivo geral deste trabalho é identificar quais práticas ágeis de engenha
 
 - Identificar práticas que não podem ser utilizadas tendo em vista a diferença entre os contextos
 
-\subsection*{Metodologia}
+Pode-se encontrar na literatura especializada incontáveis e absolutamente diversas classificações que se aplicam a metodologia. No presente trabalho, quatro critérios de classificação serão adotados: aquele em relação a natureza, em relação aos objetivos gerais da pesquisa, em relação a abordagem empregada – se qualitativa ou quantitativa, e aquele em relação aos métodos empregados.
+
+Em relação a natureza trata-se de uma pesquisa aplicada que visa gerar soluções para problemas específicos relacionados a aplicação de práticas de engenharia de software para a pesquisa científica. A abordagem aplicada será qualitativa caracterizada pelo aprofundamento nas questões subjetivas do fenômeno em detrimento da produção de medidas quantitativas. Quanto aos objetivos será uma pesquisa exploratória tendo em vista que seu objetivo é buscar familiaridade com problemas pouco conhecidos. Quanto aos procedimentos técnicos será uma pesquisa bibliográfica especialmente por meio de artigos científicos que descrevam as práticas de engenharia de software e o contexto do desenvolvimento de softwares científicos.
 
 % ----------------------------------------------------------
 % Seção de explicações
