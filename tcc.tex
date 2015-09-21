@@ -249,6 +249,40 @@ Em relação a natureza trata-se de uma pesquisa aplicada que visa gerar soluç�
 % ----------------------------------------------------------
 \section*{Revisão da Literatura}
 
+\subsection{Desenvolvimento de Software Científico}
+O objetivo desta seção é caracterizar o processo de desenvolvimento de software científico, com foco especial nas particularidades que existem em função do produto final (ie: software científico) e dos indivíduos envolvidos (ie: pesquisadores) neste processo.
+
+O software científico pode ser entendido como aquele desenvolvido por pesquisadores com o objetivo de resolução de um problema em sua área de conhecimento de interesse. Apesar de simples, essa definição tem encontrado respaldo na literatura. \citeonline{sletholt2012} define software científico como sendo aquele desenvolvido por cientistas e para cientistas, seja para a resolução de sistemas de equações matemáticas ou para geração de simulações. \citeonline{heaton2015} segue a mesma linha ao afirmar que software científico é aquele desenvolvido por cientistas e engenheiros para substituir ou expandir a experimentação física.
+
+De maneira geral, um processo de desenvolvimento de software pode ser entendido como um conjunto de atividades relacionadas que levam a produção de um software. No caso da produção de software científico, a regra parece ser a ausência de um processo formal, com a realização de tarefas ad-hoc que geram o resultado desejado. Algumas das peculiaridades já documentadas na literatura dizem respeito ao levantamento de requisitos; a ausência de testes; o relacionamento com o cliente; e ao treinamento recebido pelos responsáveis por desenvolver softwares científicos.
+
+Em relação ao levantamento de requisitos, duas características principais se destacam. Em primeiro lugar, os requisitos de um software científico aparentam ser especialmente mais indefinidos no início de um projeto em relação a softwares de negócio. É usual que o problema de pesquisa de um cientista evolua ao longo de sua pesquisa, e, com isso, os requisitos acompanhem essa transformação. Apesar de requisitos que emergem ao longo do tempo também existirem em contextos de softwares tradicionais, é razoável supor que ao menos o problema é mais bem definido e irá mudar menos no contexto tradicionais do que no científico. Além disso, uma segunda característica que explica as particularidades do levantamento de requisitos de softwares cientíticos deriva do fato de que os desenvolvedores neste caso possuem um grande domínio de negócio. Isso implica que os requisitos podem ser levantados de forma extremamente genérica, tendo em vista que o indíviduo responsável pela implementação possui conhecimento suficiente para conceber o que deveria ser implementado em primeiro lugar. Nas palavras de um pesquisador que estava acostumado a desenvolver software e depois a especificar:
+
+\begin{citacao}
+So all I told one person [the developer] was: I want you to find a way of doing a ... fast graph matching problem, in an interface that is easy to use and shows you everything you need to know on the interface, and that’s all I said. And he went away for a year and came back and here is the system.\cite{Models of scientific software development}.
+\end{citacao}
+
+O processo de teste de software científico também apresenta diferenças marcantes em relação ao processo de teste de softwares tradicionais. Em primeiro lugar, uma das diferenças que será explorada adiante também ocorre no contexto de testes, qual seja, pesquisadores não são, via de regra, treinados em como testar software. Além disso, a característica exploratória de diversos softwares científicos faz com que seja difícil definir, a priori, qual o comportamento esperado de um programa. Por fim, o teste de algoritmos númericos de estimação apresentam complexidades inerentes a forma como computadores armazenam números flutuantes. As passagens abaixo capturam a essência de testes em um ambiente de software científico:
+
+\begin{citacao}
+Testing is of the cursory nature which would enrage a software engineer (‘does the software do what I expect it to do with inputs of the type I would expect to use? If I don’t have any real expectations of the output, does the software behave in a way I really would not expect given inputs of the type I would expect to use?’).\cite{Models of scientific software development}.
+\end{citacao}
+
+\begin{citacao}
+It is argued by many philosophers and historians of science, see for example, Chalmers, 1982, that scientists assume that their instruments work unless confronted by absolutely incontrovertible evidence. Perhaps this assumption also holds for their software: the innate quality of the software is not questioned unless it becomes clear that the software is not supporting the science.\cite{Scientists and software engineers - A tale of two cultures}.
+\end{citacao}
+
+Em relação ao relacionamento com os clientes, o \emph{modus operandi} tradicional de desenvolvimento de software científico é que um pesquisador que possui familiaridade com o desenvolvimento de software, provavelmente em virtude de contato durante a elaboração da sua tese de doutorado, é responsável por desenvolver os softwares de um grupo de pesquisa ou de um laboratório. Ou seja, o desenvolvedor não só possui conhecimento da área de negócio, ele trabalha diariamente com os demais clientes.
+
+A última grande diferença é relativa ao treinamento (ou falta dele) que os responsáveis pelo desenvolvimento de software científico usualmente possuem. Enquanto no caso de desenvolvimento de software tradicionais os responsáveis passaram no minímo por 4 anos de formação em ciência da computação ou cursos similares, a realidade de pesquisadores é que eles nunca são treinados em como implementar software. Várias iniciativas tentam mudar isso, merece especial destaque o Software Carpentry, que visa ensinar cientistas as habilidades básicas pra produção de software, como bash scripting e controle de versão.
+
+
+\subsection{Práticas Ágeis de Desenvolvimento de Software}
+As características apresentadas na última seção mostram como existem particularidades ao processo de desenvolvimento de software científico que devem ser reconhecidas para que qualquer prática de engenharia de software seja de fato utilizada por pesquisadores em seu dia a dia. No entanto, algumas práticas de engenharia de software aparentam se moldar especialmente bem as necessidades de pesquisadores. A essas práticas deu-se o nome de práticas ágeis.
+
+O movimento de agilidade teve início com a publicação do manifesto ágil.
+
+
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
 % ---
