@@ -250,6 +250,7 @@ Em relação a natureza trata-se de uma pesquisa aplicada que visa gerar soluç�
 \section*{Revisão da Literatura}
 
 \subsection*{Desenvolvimento de Software Científico}
+\label{subsec:scientific_software_development}
 O objetivo desta seção é caracterizar o processo de desenvolvimento de software científico, com foco especial nas particularidades que existem em função do produto final (ie: software científico) e dos indivíduos envolvidos (ie: pesquisadores) neste processo.
 
 O software científico pode ser entendido como aquele desenvolvido por pesquisadores com o objetivo de resolução de um problema em sua área de conhecimento de interesse. Apesar de simples, essa definição tem encontrado respaldo na literatura. \citeonline{sletholt2012} define software científico como sendo aquele desenvolvido por cientistas e para cientistas, seja para a resolução de sistemas de equações matemáticas ou para geração de simulações. \citeonline{heaton2015} segue a mesma linha ao afirmar que software científico é aquele desenvolvido por cientistas e engenheiros para substituir ou expandir a experimentação física.
@@ -274,15 +275,77 @@ Testing is of the cursory nature which would enrage a software engineer (‘does
 
 Em relação ao relacionamento com os clientes, o \emph{modus operandi} tradicional de desenvolvimento de software científico é que um pesquisador que possui familiaridade com o desenvolvimento de software, provavelmente em virtude de contato durante a elaboração da sua tese de doutorado, é responsável por desenvolver os softwares de um grupo de pesquisa ou de um laboratório. Ou seja, o desenvolvedor não só possui conhecimento da área de negócio, ele trabalha diariamente com os demais clientes.
 
+% Falar sobre processo decisório sem figura de autoridade formal \cite{Agile methods in biomedical software development: a multi-site experience report}
+
 A última grande diferença é relativa ao treinamento (ou falta dele) que os responsáveis pelo desenvolvimento de software científico usualmente possuem. Enquanto no caso do desenvolvimento de software tradicionais os responsáveis usualmente possuem treinamento específico em ciência da computação e engenharia de software, a realidade de pesquisadores é que eles nunca são treinados em como implementar software. \citeonline{wilson2014} observa que estudos recentes mostram que cientistas tipicamente gastam 30\% ou mais do seu tempo desenvolvendo software mas 90\% ou mais são autodidatas, e, portanto, nunca foram expostos a práticas básicas de engenharia de software como controle de versão, revisão de código, teste unitário e automação de tarefas. 
 
-Em relação ao treinamento de cientistas, merece destaque o Software Carpentry (https://software-carpentry.org/), iniciativa que visa treinar cientistas em habilidades computacionais básicas que permitem um ganho de eficiência por parte de pesquisadores envolvidos em computação científica.
+Em relação ao treinamento de cientistas, merece destaque o Software Carpentry \url{https://software-carpentry.org/}, iniciativa que visa treinar cientistas em habilidades computacionais básicas que permitem um ganho de eficiência por parte de pesquisadores envolvidos em computação científica.
 
 \subsection*{Práticas Ágeis de Desenvolvimento de Software}
-As características apresentadas na última seção mostram como existem particularidades ao processo de desenvolvimento de software científico que devem ser reconhecidas para que qualquer prática de engenharia de software seja de fato utilizada por pesquisadores em seu dia a dia. No entanto, algumas práticas de engenharia de software aparentam se moldar especialmente bem as necessidades de pesquisadores. A essas práticas deu-se o nome de práticas ágeis.
+As características apresentadas na última seção objetivaram mostrar as particularidades do processo de desenvolvimento de software científico que devem ser reconhecidas por qualquer prática de engenharia de software que pretenda ser efetiva no referido contexto. O objetivo desta seção é apresentar um conjunto de práticas que aparentam se moldar especialmente bem as necessidades de pesquisadores. A essas deu-se o nome de práticas ágeis.
 
-O movimento de agilidade teve início com a publicação do manifesto ágil.
+O movimento de agilidade teve início formal com a publicação do manifesto ágil em 2001. Na ocasião, um grupo de 17 profissionais se reuniram com o objetivo de encontrar similaridades entre os processos de desenvolvimento de software advogados por cada um dos participantes. Todos as metodologias se apresentavam como uma alternativa aos processos cascata de desenvolvimento bastantes difundidos na época. A integra do manifesto é
 
+\begin{citacao}
+We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
+
+Individuals and interactions over processes and tools
+Working software over comprehensive documentation
+Customer collaboration over contract negotiation
+Responding to change over following a plan
+
+That is, while there is value in the items on the right, we value the items on the left more.
+\end{citacao}
+
+Além do manifesto, também foram publicados doze princípios que dão sustenção aos valores expostos pelos agilistas. No entanto, o objetivo deste trabalho é debruçar-se sobre as práticas ágeis, entendidas como as atividades concretas realizadas no dia a dia para desenvolvimento e gestão de projetos de software de maneira consistente com o manifesto ágil. A justificativa para essa abordagem deriva do entendimento que pesquisadores não irão se interessar pelo movimento ágil como um todo a menos que sejam capazes de observar melhorias concretas no seu dia a dia advindas das práticas aqui expostas.
+
+As práticas ágeis listadas abaixo foram pesquisadas no Guia de Práticas Ágeis \url{http://guide.agilealliance.org/} publicado pela \emph{Agile Alliance}. Quando necessário, foram pesquisados outras referências bibliográficas para melhor caracterização da mesma, bem como a forma pela qual as especificidades do software científico são bem atendidas. As práticas foram agrupadas de acordo com as principais particularidades existentes no processo de desenvolvimento de software científico conforme identificado na seção \ref{subsec:scientific_software_development}, além de um tópico adicional destinado a agrupar práticas que podem ser consideradas como boas práticas em engenharia de software em geral não necessariamente associadas ao movimento ágil.
+
+\subsubsection*{Requisitos}
+
+\paragraph*{\emph{Backlog}}
+O \emph{backlog} é uma lista com itens que representa todo o trabalho que deve ou pode ser realizado em um dado projeto. Ele apresenta uma característica evolutiva por natureza, ao representar tudo o que o software pode vir a ser com base nas definições advindas dos stakeholders (clientes, usuários, desenvolvedores, etc). A característica evolutiva advém do fato de que a qualquer momento do tempo novos itens podem ser inseridos ou removidos do \emph{backlog} com base em novas prioridades e requisitos. Não existe um formato físico pré-definido para o backlog e nem um nível de granularidade para os itens a ele pertencentes.
+
+\paragraph*{\emph{Design} Simples}
+O termo \emph{Design} Simples faz referência ao fato de que a estratégia de definição do \emph{design} do software deve ser baseado no reconhecimento de que essa atividade é recorrente, 
+
+A team adopting the "simple design" practice bases its software design strategy on the following principles:
+
+design is an ongoing activity, which includes refactoring and heuristics such as YAGNI
+
+design quality is evaluated based on the rules of code simplicity
+
+all design elements such as "design patterns", plugin-based architectures, etc. are seen as having costs as well as benefits, and design costs must be justified;
+
+design decisions should be deferred until the "last responsible moment", so as to collect as much information as possible on the benefits of the chosen option before incurring its costs.
+
+another common term is "emergent design", emphasizing that good global design can result from consistently paying attention to the local qualities of code structure (by analogy with the processes studied by complexity theorists where purely local rules reliably give rise to consistent global properties)
+
+
+\subsubsection*{Testes}
+
+\paragraph*{Testes Unitários}
+
+\paragraph*{TDD}
+
+\subsubsection*{Relacionamento com Cliente}
+
+\paragraph*{Time}
+
+\paragraph*{Reunião Diária}
+
+\subsubsection*{Práticas Fundamentais}
+
+\paragraph*{Controle de Versão}
+
+\paragraph*{Desenvolvimento Iterativo e Incremental}
+
+\paragraph*{Build Automatizado}
+
+
+\subsubsection*{Treinamento}
+
+\paragraph*{Programação em Pares}
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -295,6 +358,9 @@ O movimento de agilidade teve início com a publicação do manifesto ágil.
 % ---
 \section*{Considerações finais}
 \addcontentsline{toc}{section}{Considerações finais}
+Este trabalho visou identificar práticas ágeis de engenharia de software que podem ser utilizadas por pesquisadores para o desenvolvimento de softwares científicos.
+
+A caracterização do processo de desenvolvimento de software científico 
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
