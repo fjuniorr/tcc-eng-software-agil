@@ -299,7 +299,7 @@ That is, while there is value in the items on the right, we value the items on t
 
 Além do manifesto, também foram publicados doze princípios que dão sustenção aos valores expostos pelos agilistas. No entanto, o objetivo deste trabalho é debruçar-se sobre as práticas ágeis, entendidas como as atividades concretas realizadas no dia a dia para desenvolvimento e gestão de projetos de software de maneira consistente com o manifesto ágil. A justificativa para essa abordagem deriva do entendimento que pesquisadores não irão se interessar pelo movimento ágil como um todo a menos que sejam capazes de observar melhorias concretas no seu dia a dia advindas das práticas aqui expostas.
 
-As práticas ágeis listadas abaixo foram pesquisadas no Guia de Práticas Ágeis \url{http://guide.agilealliance.org/} publicado pela \emph{Agile Alliance}. Quando necessário, foram pesquisados outras referências bibliográficas para melhor caracterização da mesma, bem como a forma pela qual as especificidades do software científico são bem atendidas. As práticas foram agrupadas de acordo com as principais particularidades existentes no processo de desenvolvimento de software científico conforme identificado na seção \ref{subsec:scientific_software_development}, além de um tópico adicional destinado a agrupar práticas que podem ser consideradas como boas práticas em engenharia de software em geral não necessariamente associadas ao movimento ágil.
+As práticas ágeis listadas abaixo foram extraídas do Guia de Práticas Ágeis \url{http://guide.agilealliance.org/} publicado pela \emph{Agile Alliance}. Quando necessário, foram pesquisados outras referências bibliográficas para melhor caracterização da mesma, bem como a forma pela qual as especificidades do software científico são bem atendidas. As práticas foram agrupadas de acordo com as principais particularidades existentes no processo de desenvolvimento de software científico conforme identificado na seção \ref{subsec:scientific_software_development}, além de um tópico adicional destinado a agrupar práticas que podem ser consideradas como boas práticas em engenharia de software em geral não necessariamente associadas ao movimento ágil.
 
 \subsubsection*{Requisitos}
 
@@ -307,32 +307,23 @@ As práticas ágeis listadas abaixo foram pesquisadas no Guia de Práticas Ágei
 O \emph{backlog} é uma lista com itens que representa todo o trabalho que deve ou pode ser realizado em um dado projeto. Ele apresenta uma característica evolutiva por natureza, ao representar tudo o que o software pode vir a ser com base nas definições advindas dos stakeholders (clientes, usuários, desenvolvedores, etc). A característica evolutiva advém do fato de que a qualquer momento do tempo novos itens podem ser inseridos ou removidos do \emph{backlog} com base em novas prioridades e requisitos. Não existe um formato físico pré-definido para o backlog e nem um nível de granularidade para os itens a ele pertencentes.
 
 \paragraph*{\emph{Design} Simples}
-O termo \emph{Design} Simples faz referência ao fato de que a estratégia de definição do \emph{design} do software deve ser baseado no reconhecimento de que essa atividade é recorrente, 
-
-A team adopting the "simple design" practice bases its software design strategy on the following principles:
-
-design is an ongoing activity, which includes refactoring and heuristics such as YAGNI
-
-design quality is evaluated based on the rules of code simplicity
-
-all design elements such as "design patterns", plugin-based architectures, etc. are seen as having costs as well as benefits, and design costs must be justified;
-
-design decisions should be deferred until the "last responsible moment", so as to collect as much information as possible on the benefits of the chosen option before incurring its costs.
-
-another common term is "emergent design", emphasizing that good global design can result from consistently paying attention to the local qualities of code structure (by analogy with the processes studied by complexity theorists where purely local rules reliably give rise to consistent global properties)
-
+O termo \emph{Design} Simples faz referência ao fato de que a estratégia de definição do \emph{design} do software deve ser baseado no reconhecimento de que essa atividade é recorrente, que sua qualidade deve ser baseada na sua simplicidade e que decisões de design devem ser realizadas no último momento responsivo. Outro termo utilizado para essa prática é design emergente, enfocando o fato de que um design de qualidade irá emergir ao prestarmos atenção as qualidades locais do código.
 
 \subsubsection*{Testes}
 
 \paragraph*{Testes Unitários}
+Testes unitários são pequenos trechos de código que visam exercitar o código sob teste para garantir que o mesmo se comporta da forma esperada. Usualmente os testes unitários são escritos na mesma linguagem de programação do código sob teste, testam uma funcionalidade restrita do código sob teste, explicando o adjetivo unitário, e geralmente rodam de maneira extremamente rápida.
 
-\paragraph*{TDD}
+\paragraph*{Desenvolvimento Orientado a Testes - TDD}
+O Desenvolvimento orientado a testes representa um estilo de programação onde o teste unitário é escrito antes do código sob teste, gerando uma situação de falha inicial na primeira execução do teste. Posteriormente a código sob teste é escrito até que o teste unitário passe. Por fim, o código sob teste é refatorado como firma de manter sua simplicidade.
 
 \subsubsection*{Relacionamento com Cliente}
 
 \paragraph*{Time}
+O time em um contexto ágil representa um grupo pequeno de pessoas, até nove pessoas no SCRUM, que trabalham juntas para a concretização de um projeto. A idéia de time tenta conjurar a idéia de que nenhum indíviduo é pessoalmente responsável pelo sucesso ou fracasso de um projeto, mas sim o time como um todo. Além disso, todas as habilidades necessárias para finalização do projeto devem estar presentes no time, sejam elas técnicas ou ligadas ao negócio.
 
 \paragraph*{Reunião Diária}
+Diariamente o time se reune para compartilhar informações em relação ao progresso do trabalho até então. Essa reunião é breve, no máximo 15 minutos, e é estruturada em torno de três perguntas principais, quais sejam: O que você completou desde a última reunião?; O que você planeja completar até a próxima reunião?; e Quais impedimentos você encontrou?
 
 \subsubsection*{Práticas Fundamentais}
 
