@@ -1,4 +1,4 @@
-tcc.pdf: tcc.tex
+tcc.pdf: tcc.tex references.bib
 	pdflatex tcc.tex
 	bibtex tcc.aux
 	pdflatex tcc.tex

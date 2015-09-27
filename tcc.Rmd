@@ -1,0 +1,89 @@
+---
+title: "Práticas Ágeis para o Desenvolvimento de Software Científico"
+author: "Francisco Alves"
+date: "Outubro 03, 2015"
+output: ioslides_presentation
+---
+
+## Sumário
+
+- Introdução
+- Software Científico
+- Práticas Ágeis
+- Conclusão
+
+## Introdução
+
+- Ciência Computacional e Ciência dos Dados
+
+- Software e Software Científico
+
+- O papel do pesquisador
+
+- Manifesto Ágil
+
+- Práticas Ágeis
+
+<div class="notes">
+Falar expressamente objetivos e justificativa
+</div>
+
+## Software Científico
+
+- Processo *ad-hoc*
+
+- Requisitos
+    - Indefinição
+    - Domínio de Negócio dos desenvolvedores
+  
+- Testes
+
+- Relacionamento com Cliente
+    - Tão perto e tão longe
+  
+- Treinamento
+    - Práticas fundamentais
+
+<div class="notes">
+
+</div>
+  
+## Práticas Ágeis I
+
+- Requisitos
+    - Backlog
+    - Design Simples
+
+- Testes
+    - Testes Unitários
+    - TDD
+    
+- Relacionamento com Clientes
+    - Time
+    - Reunião Diária
+
+## Práticas Ágeis II    
+    
+- Práticas Fundamentais
+    - Controle de Versão
+    - Desenvolvimento Iterativo e Incremental
+    - Build Automatizado
+    
+- Treinamento
+    - Programação em Pares
+
+<div class="notes">
+
+</div>
+
+## Conclusão
+
+- A sinergia entre o Manifesto Ágil e o contexto de desenvolvimento de software científicos é grande
+
+- Práticas básicas de engenharia de software são importantes
+
+- Práticas ágeis podem auxiliar na produtividade de pesquisadores
+
+<div class="notes">
+
+</div>

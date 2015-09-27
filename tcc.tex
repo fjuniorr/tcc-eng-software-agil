@@ -181,18 +181,11 @@
 
 % resumo em português
 \begin{resumoumacoluna}
- Conforme a ABNT NBR 6022:2003, o resumo é elemento obrigatório, constituído de
- uma sequência de frases concisas e objetivas e não de uma simples enumeração
- de tópicos, não ultrapassando 250 palavras, seguido, logo abaixo, das palavras
- representativas do conteúdo do trabalho, isto é, palavras-chave e/ou
- descritores, conforme a NBR 6028. (\ldots) As palavras-chave devem figurar logo
- abaixo do resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto.
- 
+A ciência computacional e a ciência dos dados tem ganhado relevância nos últimos anos a ponto de serem consideradas respectivamente o terceiro e quarto pilares da ciência, ao lado da teoria e da experimentação. Um dos pontos de consenso é a necessidade de que os pesquisadores envolvidos nestas áreas aprimorem suas habilidades computacionais, especialmente aquelas ligadas ao processo de desenvolvimento de software. O objetivo deste trabalho é identificar práticas ágeis de engenharia de software que pesquisadores podem adotar para o desenvolvimento de softwares científicos. Para isso foi realizado uma revisão de literatura de como pesquisadores desenvolvem software atualmente bem como uma pesquisa de quais práticas ágeis se mostrariam úteis tendo em vista o contexto atual. Os resultados indicam que pesquisadores podem se beneficiar de diversas práticas fundamentais de engenharia de software, como controle de versão e build automatizado, bem como de práticas ágeis, como backlog e desenvolvimento orientado a testes. 
  \vspace{\onelineskip}
  
  \noindent
- \textbf{Palavras-chave}: latex. abntex. editoração de texto.
+ \textbf{Palavras-chave}: software científico. engenharia de software. manifesto ágil. práticas ágeis.
 \end{resumoumacoluna}
 
 % ]  				% FIM DE ARTIGO EM DUAS COLUNAS
@@ -290,8 +283,11 @@ O movimento de agilidade teve início formal com a publicação do manifesto ág
 We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
 
 Individuals and interactions over processes and tools
+
 Working software over comprehensive documentation
+
 Customer collaboration over contract negotiation
+
 Responding to change over following a plan
 
 That is, while there is value in the items on the right, we value the items on the left more.
@@ -299,44 +295,67 @@ That is, while there is value in the items on the right, we value the items on t
 
 Além do manifesto, também foram publicados doze princípios que dão sustenção aos valores expostos pelos agilistas. No entanto, o objetivo deste trabalho é debruçar-se sobre as práticas ágeis, entendidas como as atividades concretas realizadas no dia a dia para desenvolvimento e gestão de projetos de software de maneira consistente com o manifesto ágil. A justificativa para essa abordagem deriva do entendimento que pesquisadores não irão se interessar pelo movimento ágil como um todo a menos que sejam capazes de observar melhorias concretas no seu dia a dia advindas das práticas aqui expostas.
 
-As práticas ágeis listadas abaixo foram extraídas do Guia de Práticas Ágeis \url{http://guide.agilealliance.org/} publicado pela \emph{Agile Alliance}. Quando necessário, foram pesquisados outras referências bibliográficas para melhor caracterização da mesma, bem como a forma pela qual as especificidades do software científico são bem atendidas. As práticas foram agrupadas de acordo com as principais particularidades existentes no processo de desenvolvimento de software científico conforme identificado na seção \ref{subsec:scientific_software_development}, além de um tópico adicional destinado a agrupar práticas que podem ser consideradas como boas práticas em engenharia de software em geral não necessariamente associadas ao movimento ágil.
+As práticas ágeis listadas abaixo foram extraídas do Guia de Práticas Ágeis \url{http://guide.agilealliance.org/} publicado pela \emph{Agile Alliance}. Quando necessário, foram pesquisados outras referências bibliográficas para melhor caracterização da mesma, bem como a forma pela qual as especificidades do software científico são bem atendidas. As práticas foram agrupadas de acordo com as principais particularidades existentes no processo de desenvolvimento de software científico conforme identificado na seção \ref{subsec:scientific_software_development}, além de um tópico adicional destinado a agrupar práticas que podem ser consideradas como boas práticas em engenharia de software em geral, e não necessariamente associadas ao movimento ágil.
 
 \subsubsection*{Requisitos}
 
 \paragraph*{\emph{Backlog}}
 O \emph{backlog} é uma lista com itens que representa todo o trabalho que deve ou pode ser realizado em um dado projeto. Ele apresenta uma característica evolutiva por natureza, ao representar tudo o que o software pode vir a ser com base nas definições advindas dos stakeholders (clientes, usuários, desenvolvedores, etc). A característica evolutiva advém do fato de que a qualquer momento do tempo novos itens podem ser inseridos ou removidos do \emph{backlog} com base em novas prioridades e requisitos. Não existe um formato físico pré-definido para o backlog e nem um nível de granularidade para os itens a ele pertencentes.
 
+Tendo em vista a natureza informal do levantamento e documentação de requisitos no desenvolvimento de softwares científicos, o \emph{backlog} se apresenta como uma alternativa razoável que se posiciona entre dois extremos, a documentação pesada de processos cascata e a inexistente de softwares científicos em geral. A flexibilidade do seu formato e uso torna sua utilização por pesquisadores factível.
+
 \paragraph*{\emph{Design} Simples}
 O termo \emph{Design} Simples faz referência ao fato de que a estratégia de definição do \emph{design} do software deve ser baseado no reconhecimento de que essa atividade é recorrente, que sua qualidade deve ser baseada na sua simplicidade e que decisões de design devem ser realizadas no último momento responsivo. Outro termo utilizado para essa prática é design emergente, enfocando o fato de que um design de qualidade irá emergir ao prestarmos atenção as qualidades locais do código.
+
+O \emph{Design} Simples é especialmente interessante para softwares científicos que em geral precisam de alterar os requisitos de acordo com o rumo da pesquisa científica que justifica seu desenvolvimento.
 
 \subsubsection*{Testes}
 
 \paragraph*{Testes Unitários}
 Testes unitários são pequenos trechos de código que visam exercitar o código sob teste para garantir que o mesmo se comporta da forma esperada. Usualmente os testes unitários são escritos na mesma linguagem de programação do código sob teste, testam uma funcionalidade restrita do código sob teste, explicando o adjetivo unitário, e geralmente rodam de maneira extremamente rápida.
 
+Testes unitários podem representar um seguro para pesquisadores de que mudanças no código fonte no futuro não irão gerar problemas nas funcionalidades já existentes. De forma geral, eles servem para certificar para o pesquisador que o software está de fato funcionando da meneira pretendida.
+
 \paragraph*{Desenvolvimento Orientado a Testes - TDD}
 O Desenvolvimento orientado a testes representa um estilo de programação onde o teste unitário é escrito antes do código sob teste, gerando uma situação de falha inicial na primeira execução do teste. Posteriormente a código sob teste é escrito até que o teste unitário passe. Por fim, o código sob teste é refatorado como firma de manter sua simplicidade.
+
+Acredita-se que o desenvolvimento orientado a testes é capaz de melhorar o design do código existente bem como diminuir o acoplamento e aumentar a coesão. A principal dificuldade da adoção desta prática por pesquisadores é decorrente da alteração da lógica usual de desenvolvimento. 
 
 \subsubsection*{Relacionamento com Cliente}
 
 \paragraph*{Time}
 O time em um contexto ágil representa um grupo pequeno de pessoas, até nove pessoas no SCRUM, que trabalham juntas para a concretização de um projeto. A idéia de time tenta conjurar a idéia de que nenhum indíviduo é pessoalmente responsável pelo sucesso ou fracasso de um projeto, mas sim o time como um todo. Além disso, todas as habilidades necessárias para finalização do projeto devem estar presentes no time, sejam elas técnicas ou ligadas ao negócio.
 
+A noção de time é adequada especialmente para pesquisadores que trabalham em uma mesma instituição de pesquisa.
+
 \paragraph*{Reunião Diária}
 Diariamente o time se reune para compartilhar informações em relação ao progresso do trabalho até então. Essa reunião é breve, no máximo 15 minutos, e é estruturada em torno de três perguntas principais, quais sejam: O que você completou desde a última reunião?; O que você planeja completar até a próxima reunião?; e Quais impedimentos você encontrou?
+
+A reunião diária pode se apresentar como uma forma adequada de acompanhamento da evolução do desenvolvimento de softwares científicos.
 
 \subsubsection*{Práticas Fundamentais}
 
 \paragraph*{Controle de Versão}
+Controle de versão representa o ato de rastrear as alterações que foram realizadas em determinado documento. Via de regra, no contexto de desenvolvimento de software, são controladas todas alterações no código fonte de uma aplicação. Além da funcionalidade básica de rastrear alterações, os sistemas de controle de versão oferecem funcionalidades para facilitar o trabalho em equipe, como localização de alterações conflitantes e comparações arbitrárias do histórico das versões.
+
+Na indústria de software o controle de versão é tido como prática básica, que possibilita a adoção de outras tidas como mais complexas, como a integração contínua. No entanto, no caso de software científicos, é usual que os pesquisadores não saibam nem que isso exista, ainda controlando versões do código via troca de emails.
 
 \paragraph*{Desenvolvimento Iterativo e Incremental}
+O desenvolvimento de software é considerado iterativo na medida em que intencionalmente existe repetição de atividades ligadas ao processo de desenvolvimento com revisão dos produtos já entregues. Além disso, ele é considerado incremental quando cada versão do produto é composta por um produto completo, ainda que sem o escopo total. O oposto de incremental é o processo que a cada etapa entrega uma componente técnica, como a base de dados, as regras de negócio e a interface.
+
+O desenvolvimento iterativo e incremental é naturalmente adequado as características exploratórias presentes em qualquer pesquisa científica ao permitir que pesquisadores avaliem de forma adequada se o software está atendendo aos objetivos da pesquisa.
 
 \paragraph*{Build Automatizado}
+Uma build no vocabulário de engenharia de software representa o processo de construir o produto final do software que será utilizado pelos usuários a partir do código fonte e demais arquivos necessários mantidos pelos desenvolvedores. Um build é considerado automatizado quando não é necessário intervenção humana direta e o processo pode ser realizado somente com as informações disponíveis no sistema de controle de versão. Um dos principais benefícios de qualquer processo de automatização consiste na diminuição de erros decorrentes da execução de etapas manuais.
 
+Por usualmente não serem treinados em práticas de engenharia de software, pesquisadores também não costumam conhecer ferramentas de build como make, que permitem capturar e documentar não so a construção de softwares mas o \emph{workflow} de uma análise de dados e da posterior geração de relatórios com \emph{LaTeX} por exemplo. Um dos grandes ganhos neste caso é o aumento da reprodutibilidade na ciência computacional \footnote{Para uma discussão do tema de reprodutibilidade na ciência computacional vide \citeonline{peng2011}}, tema que vem ganhando relevância nos últimos anos.
 
 \subsubsection*{Treinamento}
 
 \paragraph*{Programação em Pares}
+A programação em pares é a prática de dois desenvolvedores dividirem a mesma estação de trabalho, ou seja, apenas um computador é utilizado. O desenvolvedor com o comando do teclado é chamado de \emph{driver}, e o desenvolvedor responsável por focar principalmente no direcionamento geral do trabalho é chamado de \emph{navigator}. Apesar de ser uma prática que não pode ser simplesmente forçada sobre os desenvolvedores, ela é especialmente adequada para aumentar a difusão de conhecimento e a transferência de habilidades entre o time.
+
+Para o caso de pesquisadores que usualmente são autodidatas, a possibilidade de programar com outro pesquisador mais experiente possui grande potencial de minimizar o efeito de `redescobrir a roda`.
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -351,7 +370,15 @@ Diariamente o time se reune para compartilhar informações em relação ao prog
 \addcontentsline{toc}{section}{Considerações finais}
 Este trabalho visou identificar práticas ágeis de engenharia de software que podem ser utilizadas por pesquisadores para o desenvolvimento de softwares científicos.
 
-A caracterização do processo de desenvolvimento de software científico 
+O processo de desenvolvimento de software científico pode ser caracterizado pela utilização de processos ad-hoc de desenvolvimento, requisitos extremamente volatéis e muitas vezes implícitos, baixo nível de testes em específico e baixo nível de utilização de práticas de engenharia de software tidas como básicas em geral.
+
+Este trabalho identificou que além da utilização de práticas de engenharia de softwares fundamentais, pesquisadores também podem se beneficiar de práticas ágeis de engenharia de software. As práticas ágeis surgiram formalmente com a publicação do manifesto ágil em 2001 e representaram um rompimento em relação ao modelo tradicional cascata de desenvolvimento existente predominantemente na época.
+
+Em relação as práticas fundamentais merecem destaque a utilização de sistemas de controle de versão e de builds automatizados. Consideradas básicas na indústria, essas práticas são capazes de aumentar a eficiência de pesquisadores que desenvolvem softwares.
+
+Além disso, em relação as práticas ágeis, merecem destaque o \emph{backlog} e o desenvolvimento orientado a testes (TDD). Ambos atacam duas dificuldades que são comuns no desenvolvimento de softwares científicos, requisitos e testes, e possuem diversos relatos de que de fato funcionam, condição essencial para que sejam adotadas por pesquisadores que não possuem como objetivo principal o desenvolvimento de software, e, sim, a resolução de problemas científicos.
+
+Sugere-se para trabalhos futuros a realização de experimentos de introduzir práticas ágeis em equipes de pesquisadores que previamente não as utilizavam para identificar empiricamente se elas realmente são capazes de melhorar a produtividade de pesquisadores que desenvolvem software científico.
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -373,22 +400,24 @@ A caracterização do processo de desenvolvimento de software científico
 \renewcommand{\resumoname}{Abstract}
 \begin{resumoumacoluna}
  \begin{otherlanguage*}{english}
-   According to ABNT NBR 6022:2003, an abstract in foreign language is a back
-   matter mandatory element.
+   Computational science and data science have been gaining relevance in the last few years to the point where they are considered respectively the third and fourth pillars of science, right next to theory and experimentation. One point of consensus is the necessity that researchers involved in those areas improve their computational skills, especially those connected to the software development process. The objective of this work is to identify software engineering agile practices that researchers could adopt for the development of scientific software. For that a literature review of how researchers currently develop software and what agile practices would show themselves useful in the current context. The results indicate that researchers could benefit from several fundamental software engineering practices, like version control and automated builds, but also from agile practices, like backlog and test driven development.
 
    \vspace{\onelineskip}
  
    \noindent
-   \textbf{Keywords}: latex. abntex.
+   \textbf{Keywords}: scientific software. software engineering. agile manifesto. agile practices.
  \end{otherlanguage*}  
 \end{resumoumacoluna}
 
 % ]  				% FIM DE ARTIGO EM DUAS COLUNAS
 % ---
-
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
+\nocite{beck2004}
+\nocite{sutherland2013}
+\nocite{beck2001}
+\nocite{alliance2015}
 \bibliography{references}
 
 % ----------------------------------------------------------
